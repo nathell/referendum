@@ -34,20 +34,28 @@
   (+ from (* (rand) (- to from))))
 
 (defn enrich [{:referendum/keys [result_from result_to] :as referendum}]
-  (assoc referendum :referendum/result (result result_from result_to)))
+  (assoc referendum
+         :referendum/result (result result_from result_to)
+         :referendum/turnout (+ 70 (* 25 (rand)))))
 
 (defn get-referendum [conn id]
   (some-> (jdbc/execute-one! conn ["select * from referendum where id = ?" id])
           (enrich)))
+
+(defn localized-question [{:referendum/keys [topic locale]}]
+  (str "Czy jesteś za " topic "?"))
 
 (defn handle-referendum [{:keys [db path-params] :as req}]
   (with-open [c (jdbc/get-connection db)]
     (let [referendum (get-referendum c (:id path-params))]
       (layout
        (if referendum
-         [:div
-          [:h1 "Czy jesteś za " (:referendum/topic referendum) "?"]
-          [:h1.result (format "%.2f%%" (:referendum/result referendum))]]
+         [:div.referendum
+          [:img {:src "/assets/referendum.webp"}]
+          [:h2 (localized-question referendum)]
+          [:h1.result (format "%.2f%%" (:referendum/result referendum))]
+          [:h1.za "za"]
+          [:p.turnout "frekwencja: " [:b (format "%.2f%%" (:referendum/turnout referendum))]]]
          [:h1 "nie ma takiego numeru"])))))
 
 (def basic-handler
