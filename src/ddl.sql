@@ -7,3 +7,5 @@ create table referendum (
   result_from number not null,
   result_to number not null
 );
+
+create index idx_referendum_started_on on referendum (started_on);

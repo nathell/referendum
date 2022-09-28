@@ -2,3 +2,15 @@
 .result { font-size: 144px; line-height: 1.2; margin: 0; }
 .turnout { font-size: 36px; text-align: center; }
 .za { margin-top: 0; }
+fieldset { border: none; display: flex; flex-direction: row; align-items: center; }
+label, input { display: inline-block; }
+label { margin: 0 20px; }
+label.fixed { min-width: 100px; }
+input { flex: 1; }
+.error { font-size: 14px; color: #c30; margin: -20px 0 0 20px; }
+.voting button { font-size: 30px; }
+.yes button { color: #6d3; }
+.no button { color: #d63; }
+@media screen and (max-width: 959px) {
+    .result { font-size: 72px; }
+}
