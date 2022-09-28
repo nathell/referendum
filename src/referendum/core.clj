@@ -21,3 +21,6 @@
 
 (defonce system
   (integrant/init config))
+
+(defn run [opts]
+  system)
