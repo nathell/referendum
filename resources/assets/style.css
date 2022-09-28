@@ -1,0 +1,4 @@
+.referendum > * { text-align: center; }
+.result { font-size: 144px; line-height: 1.2; margin: 0; }
+.turnout { font-size: 36px; text-align: center; }
+.za { margin-top: 0; }
