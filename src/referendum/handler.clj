@@ -164,7 +164,16 @@
            [:input {:type "number" :name "result_to" :value (:result_to input)}]
            "%"]
           (valid-message validation :result)]
-         [:button "stwórz!"]]]))))
+         [:h2 "umowa dżentelmeńska"]
+         [:p "zanim stworzysz referendum, "
+          [:a {:href "https://armysos.com.ua/en/help-the-army"} "wrzuć na zbiórkę dla armii"]
+          " albo "
+          [:a {:href "https://zrzutka.pl/w6p3cg"} "na zrzutkę humanitarną"]
+          " "
+          [:a {:href "https://www.facebook.com/profile.php?id=100013477777304"} "Archiego"]
+          ". choćby złotówkę."]
+         [:p "umawiamy się, że bez wpłaty nie robimy referendów, dobra?"]
+         [:button "dorzucone – stwórz referendum"]]]))))
 
 (defn handle-create [req]
   (layout
