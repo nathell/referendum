@@ -153,7 +153,8 @@
          [:div
           [:fieldset
            [:label.fixed {:for "topic"} "Czy jesteś za"]
-           [:input {:type "text" :name "topic" :value (:topic input) :placeholder "treścią pytania referendalnego w narzędniku (za kim, za czym?)"}]]
+           [:input {:type "text" :name "topic" :value (:topic input) :placeholder "treścią pytania referendalnego w narzędniku (za kim, za czym?)"}]
+           "?"]
           (valid-message validation :topic)]
          [:div
           [:fieldset
