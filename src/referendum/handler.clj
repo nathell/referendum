@@ -24,7 +24,12 @@
        [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
        [:link {:rel "stylesheet" :type "text/css" :href "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"}]
        [:link {:rel "stylesheet" :type "text/css" :href "/assets/style.css"}]
-       [:title "referendum"]]
+       [:title "Vote Putin style"]
+       [:meta {:name "description" :content "Skoro Putin może robić referenda z dupy, to Ty też możesz!"}]
+       [:meta {:property "og:type" :content "website"}]
+       [:meta {:property "og:image" :content "https://voteputinstyle.online/assets/slava-ukraini.jpg"}]
+       [:meta {:name "twitter:card" :content "summary_large_image"}]
+       [:meta {:property "twitter:domain" :content "voteputinstyle.online"}]]
       (into
        [:body]
        content)]))))
